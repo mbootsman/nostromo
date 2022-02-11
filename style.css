@@ -15,3 +15,20 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
 Twenty Twenty-Two is distributed under the terms of the GNU GPL.
 */
+
+body h1.wp-block-post-title, body h2, body h2.wp-block-post-title, body h3, body h4, body h5, body h6{
+  font-family: Dejavu Sans, Arial, Verdana, sans-serif;
+  font-size: clamp(24px, 4vw, 48px)
+}
+
+.home .wp-block-post-title {
+  text-align: center;
+}
+
+body h2 {
+  font-size: clamp(20px, 4vw, 34px);
+}
+
+body p {
+  margin-top: 0
+}
