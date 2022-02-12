@@ -24,3 +24,7 @@ function nostromo_remove_parent_webfonts() {
 
 /* Add featured image sizen */
 add_image_size( 'featured-image', 960, 248, array( 'left', 'top' ) );
+
+
+/* Disable lazy loading */
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
