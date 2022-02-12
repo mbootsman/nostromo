@@ -29,13 +29,13 @@ add_image_size( 'featured-image', 960, 248, array( 'left', 'top' ) );
 /* Disable lazy loading */
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
-/* Disable jquery */
-function nostromo_dequeue_jquery_migrate( $scripts ) {
-    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
-        $scripts->registered['jquery']->deps = array_diff(
-            $scripts->registered['jquery']->deps,
-            [ 'jquery-migrate' ]
-        );
-    }
+/* Disable jquery on the frontend */
+add_filter( 'wp_enqueue_scripts', 'nostromo_remove_jquery', PHP_INT_MAX );
+function nostromo_remove_jquery( ){
+  if ( ! is_user_logged_in()) {
+    wp_dequeue_script( 'jquery');
+    wp_deregister_script( 'jquery');
+    wp_dequeue_script('jquery-migrate');
+    wp_deregister_script('jquery-migrate');
+  }
 }
-add_action( 'wp_default_scripts', 'nostromo_dequeue_jquery_migrate' );
