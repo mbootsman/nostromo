@@ -28,3 +28,14 @@ add_image_size( 'featured-image', 960, 248, array( 'left', 'top' ) );
 
 /* Disable lazy loading */
 add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
+/* Disable jquery */
+function nostromo_dequeue_jquery_migrate( $scripts ) {
+    if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            [ 'jquery-migrate' ]
+        );
+    }
+}
+add_action( 'wp_default_scripts', 'nostromo_dequeue_jquery_migrate' );
