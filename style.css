@@ -24,6 +24,14 @@ body h1.wp-block-post-title, body h2, body h2.wp-block-post-title, body h3, body
   font-size: clamp(24px, 4vw, 48px)
 }
 
+body h2 {
+    font-size: clamp(20px, 4vw, 30px)
+}
+
+body h3 {
+    font-size: clamp(18px, 4vw, 24px)
+}
+
 .home .wp-block-post-title {
   text-align: center;
 }
@@ -38,4 +46,8 @@ body p {
 
 body .wp-block-navigation {
   margin-top: 0
+}
+
+body a, body a:visited {
+  color: #000;
 }
