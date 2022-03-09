@@ -25,11 +25,11 @@ body h1.wp-block-post-title, body h2, body h2.wp-block-post-title, body h3, body
 }
 
 body h2 {
-    font-size: clamp(20px, 4vw, 30px)
+  font-size: clamp(20px, 4vw, 30px)
 }
 
 body h3 {
-    font-size: clamp(18px, 4vw, 24px)
+  font-size: clamp(18px, 4vw, 24px)
 }
 
 .home .wp-block-post-title {
@@ -50,4 +50,29 @@ body .wp-block-navigation {
 
 body a, body a:visited {
   color: #000;
+}
+
+body .wp-block-button__link {
+  border-radius: 5px;
+}
+
+body .gform_button {
+  color: #fff;
+  background-color: #662d91;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  text-decoration-style: solid;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+body .gform_button:hover {
+  opacity: 0.90;
 }
